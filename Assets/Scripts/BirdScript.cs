@@ -35,7 +35,11 @@ public class BirdScript : MonoBehaviour
                 Debug.Log(roofDeadZone);
                 setBirdGameOver();
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // Input.GetTouch(0).phase == TouchPhase.Ended
+            // if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
                 myRigidbody.velocity = Vector2.up * flapStrength;
                 birdAnimator.SetBool("FlyingUp", true);
